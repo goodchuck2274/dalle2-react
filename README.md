@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# 固巧快 AI 繪圖產生器
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 使用技術
+- [OpenAI DALL-E 2](https://openai.com/product/dall-e-2)
+- [OpenAI Chat GPT 3.5](https://chat.openai.com/chat)
+- [React](https://zh-hant.reactjs.org/)
+- [Create React App](https://create-react-app.dev/)
 
-## Available Scripts
+## 安裝說明
+### 取得 OpenAI API Keys
 
-In the project directory, you can run:
+請先至 OpenAI 註冊會員，到網址 [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys) 取得免費的 API Keys (免費額度視 OpenAI 政策決定)
 
-### `npm start`
+### Clone Dalle2-React 專案
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+執行 
+```
+git clone https://github.com/goodchuck2274/dalle2-react.git
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 置換 apiKey
 
-### `npm test`
+找到檔案 \src\config.js ，將 apiKey 換成自己申請的 Open API Key
+```
+export const apiKey = 'Your OpenAI apiKey';
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 啟動
 
-### `npm run build`
+先執行
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+再執行
+```
+npm run start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+就可以在 localhost:3000 ，看到自己的 AI 繪圖產生器
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 簡易說明
 
-### `npm run eject`
+### 支援中文
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+程式會先將中文敘述使用 ChatGPT 轉成英文關鍵字，再用轉出來的英文關鍵字用 DALL-E 2 產生圖片
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Demo 網頁
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[https://dalle2-react.goodchuck.com.tw/](https://dalle2-react.goodchuck.com.tw/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+如果不能使用的話，應該就是免費額度用完了
